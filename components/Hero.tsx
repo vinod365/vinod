@@ -41,13 +41,15 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-black px-8 py-3 rounded-md font-bold text-sm tracking-wider uppercase hover:bg-slate-200 transition-colors"
-                >
-                    Contact ME
-                </motion.button>
+                <a href="#contact">
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-white text-black px-8 py-3 rounded-md font-bold text-sm tracking-wider uppercase hover:bg-slate-200 transition-colors"
+                    >
+                        Contact ME
+                    </motion.button>
+                </a>
             </motion.div>
         </section>
     );
