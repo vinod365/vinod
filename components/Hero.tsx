@@ -1,55 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Hero = () => {
+    const springTransition = {
+        type: "spring" as const,
+        stiffness: 300,
+        damping: 30,
+        restDelta: 0.001
+    };
+
+    const fadeInUp = {
+        initial: { opacity: 0, y: 15 },
+        animate: { opacity: 1, y: 0 },
+        transition: springTransition
+    };
+
     return (
-        <section className="relative pt-40 pb-12 px-6 md:px-24 flex flex-col justify-center">
-            <div className="mesh-gradient" />
+        <section className="relative z-10 min-h-screen pt-[100px] sm:pt-[120px] pb-[60px] sm:pb-[80px] flex flex-col justify-center">
+            <motion.span
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.1 }}
+                className="font-mono text-[12px] text-accent tracking-[0.1em] mb-7 before:content-['//_'] before:opacity-40"
+            >
+                full stack developer
+            </motion.span>
+
+            <motion.h1
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.2 }}
+                className="text-[clamp(44px,9vw,84px)] font-semibold text-text-bright leading-[1.05] tracking-[-0.038em] mb-2.5"
+            >
+                Hi, I&apos;m <span className="text-accent">Vinod.</span>
+            </motion.h1>
+
+            <motion.p
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.28 }}
+                className="text-[clamp(26px,5vw,48px)] font-light text-text-dim leading-[1.1] tracking-[-0.025em] mb-9"
+            >
+                I build things for the web.
+            </motion.p>
+
+            <motion.p
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.36 }}
+                className="max-w-[600px] text-[16px] font-light text-text leading-[1.8] mb-11"
+            >
+                Full-stack developer building precise, scalable, and accessible digital experiences — at the intersection of thoughtful engineering and clean design.
+            </motion.p>
 
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="max-w-3xl"
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.44 }}
+                className="flex gap-3 mb-16"
             >
-                <h1 className="text-6xl md:text-8xl font-bold text-white mb-2 tracking-tight">
-                    Vinod
-                </h1>
-                <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-6">
-                    Full Stack Developer
-                </h2>
-                <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    Building precise, engaging, and accessible digital experiences.
-                </p>
-
-                <div className="flex items-center gap-6 mb-10">
-                    <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        className="text-2xl text-slate-400 hover:text-white transition-colors"
-                    >
-                        <FaLinkedin />
-                    </a>
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        className="text-2xl text-slate-400 hover:text-white transition-colors"
-                    >
-                        <FaGithub />
-                    </a>
-                </div>
-
-                <a href="#contact">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-white text-black px-8 py-3 rounded-md font-bold text-sm tracking-wider uppercase hover:bg-slate-200 transition-colors"
-                    >
-                        Contact ME
-                    </motion.button>
+                <a href="#experience" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg text-[14px] font-semibold rounded-md hover:opacity-88 hover:-translate-y-px transition-all">
+                    View my work →
                 </a>
+                <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 bg-transparent text-text text-[14px] font-normal border border-border rounded-md hover:border-border-hover hover:text-text-bright transition-all">
+                    Get in touch
+                </a>
+            </motion.div>
+
+            <motion.div
+                {...fadeInUp}
+                transition={{ ...springTransition, delay: 0.56 }}
+                className="flex flex-wrap gap-x-10 gap-y-7 pt-9 border-t border-border"
+            >
+                <div>
+                    <div className="text-[26px] font-semibold text-text-bright tracking-[-0.03em] leading-none mb-1">4+</div>
+                    <div className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">Years exp.</div>
+                </div>
+                <div>
+                    <div className="text-[26px] font-semibold text-text-bright tracking-[-0.03em] leading-none mb-1">12+</div>
+                    <div className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">Projects shipped</div>
+                </div>
+                <div>
+                    <div className="text-[26px] font-semibold text-text-bright tracking-[-0.03em] leading-none mb-1">1</div>
+                    <div className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">Startup built for</div>
+                </div>
+                <div>
+                    <div className="text-[20px] font-semibold text-[#68d391] tracking-[-0.03em] leading-none mb-2 mt-1">Open</div>
+                    <div className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">To opportunities</div>
+                </div>
             </motion.div>
         </section>
     );

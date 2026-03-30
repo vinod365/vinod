@@ -1,144 +1,82 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import ProjectModal from "./ProjectModal";
-import { FaChevronRight } from "react-icons/fa";
-
-const EXPERIENCE_DATA = [
-    {
-        period: "JULY 2023 - PRESENT",
-        role: "Full Stack Engineer",
-        company: "Zenmonk",
-        description: "Develop and maintain essential web projects, handling both frontend and backend tasks. Collaborate closely with cross-functional teams, including developers, designers, and product managers, to implement and champion new features.",
-        projects: [
-            {
-                title: "Attendance Manager",
-                description: "A tool was requested to assist teachers in tracking students' attendance, including the registration of absences, lateness, and releases for each class session. The tool should also allow teachers to view the total number and percentage of absences for each type of session configured. \n\nMy main responsibility was implementing the frontend of the application using Next.js, MUI, and Redux Toolkit for state management.",
-                tech: ["Next.js", "MUI", "Redux Toolkit"]
-            },
-            {
-                title: "Complaints",
-                description: "This tool enables users to file complaints about ongoing corruption. It features two interfaces: one for users to submit complaints and another for managers to review and manage the received complaints. \n\n My primary responsibility is to develop the frontend using Next.js, leveraging Material-UI (MUI) for styling and Redux for global state management.",
-                tech: ["Next.js", "MUI", "Redux"]
-            },
-            {
-                title: "Reinstatement Responsible",
-                description: "This feature enables the addition of reinstatement responsible parties and assigns specific permissions to each. \n\n My role is to refactor the existing project, transitioning it from a classical architecture to a vertical slice architecture (Feature Slice Design - FSD).",
-                tech: ["Next.js", "FSD Architecture"]
-            },
-            {
-                title: "Company Official Website",
-                description: "The company’s official website was an exciting project developed entirely from scratch. It involved close collaboration with the UI/UX team to deliver the initial version while designing and coding complex UI elements. \n\n My primary responsibility was to handle both the design and development, completing the entire project from start to finish.",
-                tech: ["Next.js", "Custom CSS", "UI/UX"]
-            },
-            {
-                title: "Institution catalog and Research focus",
-                description: "These two features enable CRUD operations on an entity and served as our first exposure to microservice architecture.",
-                tech: ["Microservices", "CRUD", "API Design"]
-            }
-        ]
-    },
-    {
-        period: "JULY 2021 - JULY 2023",
-        role: "B.Tech Computer Science Engineering",
-        company: "LPU",
-        description: "Developed a strong understanding of core computer science principles, software development practices, and effective problem-solving techniques.",
-        highlights: ["8.1 CGPA"]
-    }
-];
 
 const Experience = () => {
-    const [selectedProject, setSelectedProject] = useState<null | any>(null);
+    const springTransition = {
+        type: "spring" as const,
+        stiffness: 300,
+        damping: 30,
+        restDelta: 0.001
+    };
+
+    const projects = [
+        { name: "Attendance Manager", desc: "Streamlined attendance tracking and management tool for training environments." },
+        { name: "Complaints Platform", desc: "Enables marketplace users to raise and track complaints for rapid resolution." },
+        { name: "Reinstatement Responsible", desc: "Workflow tool for managing reinstatement processes and team responsibilities." },
+        { name: "Company Official Website", desc: "Full company marketing site built for reaching and converting prospects." },
+        { name: "Institution Catalog & Research Focus", desc: "Comprehensive catalog and discovery system for institutions and research initiatives." }
+    ];
 
     return (
-        <section id="experience" className="py-12 px-6 md:px-24">
-            <div className="max-w-4xl">
-                <h2 className="text-sm font-bold tracking-[0.2em] text-slate-500 uppercase mb-12">
-                    TIMELINE
-                </h2>
+        <section id="experience" className="py-[88px] border-t border-border">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={springTransition}
+                className="flex items-center gap-3.5 mb-[52px]"
+            >
+                <span className="font-mono text-[12px] text-accent opacity-80">03</span>
+                <span className="text-[12px] font-medium text-text-bright tracking-[0.12em] uppercase">Experience</span>
+                <div className="flex-1 h-px bg-border"></div>
+            </motion.div>
 
-                <div className="space-y-12">
-                    {EXPERIENCE_DATA.map((exp, index) => (
-                        <motion.div
-                            key={exp.period}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group relative"
-                        >
-                            <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-12">
-                                <span className="text-xs font-bold tracking-widest text-slate-500 min-w-[150px] pt-1">
-                                    {exp.period}
+            <div className="flex flex-col gap-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={springTransition}
+                    className="grid grid-cols-1 md:grid-cols-[192px_1fr] gap-12"
+                >
+                    <div>
+                        <div className="font-mono text-[12px] text-text-dim tracking-[0.04em] mb-1.5 pt-1">Jul 2023 — Present</div>
+                        <div className="font-mono text-[10px] text-accent tracking-[0.08em] uppercase opacity-90">Full-time</div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-[20px] font-semibold text-text-bright tracking-[-0.02em] mb-1">Full Stack Engineer</h3>
+                        <div className="text-[13px] text-text-dim mb-3.5">Zonmonk</div>
+                        <p className="text-[14px] font-light text-text leading-[1.75] max-w-[540px] mb-4.5">
+                            Develop and maintain essential web projects, handling both frontend and backend systems. Collaborate closely with cross-functional teams — developers, designers, and product managers — to implement and champion new features.
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5 mb-7">
+                            {["React", "TypeScript", "Node.js", "PostgreSQL", "REST APIs"].map(tag => (
+                                <span key={tag} className="font-mono text-[11px] px-2.5 py-1 text-accent bg-accent/7 border border-accent/18 rounded-sm tracking-[0.04em]">
+                                    {tag}
                                 </span>
+                            ))}
+                        </div>
 
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-white mb-1">
-                                        {exp.role} · <span className="text-slate-300">{exp.company}</span>
-                                    </h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-2xl">
-                                        {exp.description}
-                                    </p>
-
-                                    {exp.projects && (
-                                        <div className="flex flex-wrap gap-3">
-                                            <button
-                                                onClick={() => setSelectedProject(exp.projects![0])} // Just a placeholder highlight or first project
-                                                className="flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full text-xs font-bold text-slate-300 hover:bg-white/5 transition-colors"
-                                            >
-                                                Featured Projects <FaChevronRight size={10} className="mt-0.5" />
-                                            </button>
-                                            <div className="flex flex-wrap gap-2 pt-2 md:pt-0">
-                                                {["JavaScript", "TypeScript", "React", "Node"].map(t => (
-                                                    <span key={t} className="px-3 py-1 bg-indigo-500/10 text-indigo-300 rounded-full text-[10px] font-bold tracking-wider uppercase">
-                                                        {t}
-                                                    </span>
-                                                ))}
-                                            </div>
+                        <div className="mt-7 p-6 md:p-6 bg-accent/4 border border-accent/15 rounded-lg">
+                            <div className="font-mono text-[11px] text-accent tracking-[0.1em] uppercase mb-4">Projects shipped at Zonmonk</div>
+                            <div className="flex flex-col gap-0.5">
+                                {projects.map((proj, idx) => (
+                                    <div key={idx} className="flex items-start gap-3.5 p-3.5 rounded-sm hover:bg-accent/5 transition-colors group">
+                                        <div className="w-1.25 h-1.25 rounded-full bg-accent opacity-65 shrink-0 mt-2" />
+                                        <div>
+                                            <div className="text-[14px] font-medium text-text-bright tracking-[-0.01em] mb-0.5">{proj.name}</div>
+                                            <div className="text-[13px] text-[#8a9ab0] font-light leading-[1.55]">{proj.desc}</div>
                                         </div>
-                                    )}
-
-                                    {exp.projects && (
-                                        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-3">
-                                            {exp.projects.map((proj) => (
-                                                <button
-                                                    key={proj.title}
-                                                    onClick={() => setSelectedProject(proj)}
-                                                    className="text-left glass-card p-4 hover:border-brand-primary transition-all group/btn"
-                                                >
-                                                    <h4 className="text-sm font-bold text-white mb-1 transition-colors group-hover/btn:text-brand-primary">
-                                                        {proj.title}
-                                                    </h4>
-                                                    <p className="text-xs text-slate-500 line-clamp-1">
-                                                        {proj.description.slice(0, 100)}...
-                                                    </p>
-                                                </button>
-                                            ))}
-                                        </div>
-                                    )}
-
-                                    {exp.highlights && (
-                                        <div className="flex gap-2">
-                                            {exp.highlights.map(h => (
-                                                <span key={h} className="px-3 py-1 bg-white/5 text-slate-300 rounded-full text-xs font-bold">
-                                                    {h}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
+                                    </div>
+                                ))}
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
-
-            <ProjectModal
-                isOpen={!!selectedProject}
-                onClose={() => setSelectedProject(null)}
-                project={selectedProject}
-            />
         </section>
     );
 };

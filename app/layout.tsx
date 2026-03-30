@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Vinod | Full Stack Developer",
-  description: "Portfolio of Vinod, a Full Stack Developer specializing in building precise, engaging, and accessible digital experiences.",
+  title: "Vinod — Full Stack Developer",
+  description: "Portfolio of Vinod, a Full Stack Developer building precise, scalable, and accessible digital experiences.",
   keywords: ["Full Stack Developer", "Vinod", "React", "Next.js", "Software Engineer"],
   authors: [{ name: "Vinod" }],
 };
@@ -25,9 +29,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} scroll-smooth dark font-sans`}
+      className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth dark font-sans`}
     >
-      <body className="antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+      <body className="antialiased selection:bg-accent/30 selection:text-accent font-sans">
+        <div className="grid-bg" />
         {children}
         <Analytics />
         <SpeedInsights />
