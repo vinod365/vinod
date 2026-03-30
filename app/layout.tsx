@@ -15,10 +15,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vinod — Full Stack Developer",
-  description: "Portfolio of Vinod, a Full Stack Developer building precise, scalable, and accessible digital experiences.",
-  keywords: ["Full Stack Developer", "Vinod", "React", "Next.js", "Software Engineer"],
+  title: "Vinod — Full Stack Engineer",
+  description: "Portfolio of Vinod, a Full Stack Engineer specialized in building sovereign AI solutions and enterprise-grade platforms.",
+  keywords: ["Full Stack Developer", "Vinod", "React", "Next.js", "AI Engineer", "Cybersecurity"],
   authors: [{ name: "Vinod" }],
+  metadataBase: new URL("https://www.vinodevx.com"),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

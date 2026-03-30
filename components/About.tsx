@@ -67,11 +67,11 @@ const About = () => {
                     </div>
                     <div className="flex justify-between items-center border-border text-[13px] border-b py-2.5">
                         <span className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">GitHub</span>
-                        <span className="text-text-bright font-normal"><a href="#" className="text-accent hover:underline">@vinod</a></span>
+                        <span className="text-text-bright font-normal"><a href="https://github.com/vinod365" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">@vinod365</a></span>
                     </div>
                     <div className="flex justify-between items-center text-[13px] py-2.5">
                         <span className="font-mono text-[11px] text-text-dim tracking-[0.07em] uppercase">LinkedIn</span>
-                        <span className="text-text-bright font-normal"><a href="#" className="text-accent hover:underline">/in/vinod</a></span>
+                        <span className="text-text-bright font-normal"><a href="https://www.linkedin.com/in/vinod-tanwar-853976179" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">vinod-tanwar</a></span>
                     </div>
                 </motion.div>
             </div>

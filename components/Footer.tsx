@@ -3,11 +3,11 @@
 const Footer = () => {
     return (
         <footer className="relative z-10 border-t border-border px-10 py-7 max-w-[1000px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <span className="font-mono text-[13px] text-text-dim">vinod.dev</span>
+            <span className="font-mono text-[13px] text-text-dim">vinodevx.com</span>
 
             <div className="flex gap-6">
-                <a href="#" className="font-mono text-[12px] text-text-dim hover:text-accent tracking-[0.04em] transition-colors">GitHub</a>
-                <a href="#" className="font-mono text-[12px] text-text-dim hover:text-accent tracking-[0.04em] transition-colors">LinkedIn</a>
+                <a href="https://github.com/vinod365" target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-text-dim hover:text-accent tracking-[0.04em] transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/vinod-tanwar-853976179" target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-text-dim hover:text-accent tracking-[0.04em] transition-colors">LinkedIn</a>
                 <a href="#" className="font-mono text-[12px] text-text-dim hover:text-accent tracking-[0.04em] transition-colors">Resume</a>
             </div>
 
