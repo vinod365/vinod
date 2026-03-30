@@ -96,14 +96,14 @@ const Experience = () => {
                             </div>
 
                             {exp.projects.length > 0 && (
-                                <div className="mt-7 p-6 md:p-6 bg-accent/4 border border-accent/15 rounded-lg relative overflow-hidden group/list">
+                                <div className="mt-7 p-4 md:p-8 bg-accent/4 border border-accent/15 rounded-lg relative overflow-hidden group/list">
                                     <div className="font-mono text-[11px] text-accent tracking-[0.1em] uppercase mb-4">Projects at {exp.company}</div>
                                     <div
                                         onScroll={(e) => handleScroll(expIdx, e)}
                                         className="flex flex-col gap-0.5 overflow-y-auto max-h-[300px] no-scrollbar scroll-smooth"
                                     >
                                         {exp.projects.map((proj, idx) => (
-                                            <div key={idx} className="flex items-start gap-3.5 p-3.5 rounded-sm hover:bg-accent/5 transition-colors group">
+                                            <div key={idx} className="flex items-start gap-2.5 p-2.5 md:gap-3.5 md:p-3.5 rounded-sm hover:bg-accent/5 transition-colors group">
                                                 <div className="w-1.25 h-1.25 rounded-full bg-accent opacity-65 shrink-0 mt-2" />
                                                 <div>
                                                     <div className="text-[14px] font-medium text-text-bright tracking-[-0.01em] mb-0.5">{proj.name}</div>
