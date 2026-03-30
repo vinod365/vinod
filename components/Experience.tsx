@@ -113,9 +113,14 @@ const Experience = () => {
                                         ))}
                                     </div>
 
-                                    <div className={`absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[rgba(10,14,20,0.95)] via-[rgba(10,14,20,0.6)] to-transparent pointer-events-none transition-all duration-500 flex items-end justify-center pb-2 ${scrolledLists[expIdx] ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0 text-opacity-0 md:text-opacity-100"} group-hover/list:opacity-0`}>
-                                        {exp.projects.length > 3 && (
-                                            <span className="font-mono text-[9px] text-accent/50 tracking-[0.2em] uppercase">Scroll to view more</span>
+                                    <div className={`absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a0e14] via-[#0a0e14]/80 to-transparent backdrop-blur-[1px] pointer-events-none transition-all duration-500 flex items-end justify-center pb-3 ${scrolledLists[expIdx] ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"} group-hover/list:opacity-0`}>
+                                        {exp.projects.length >= 3 && (
+                                            <div className="flex flex-col items-center gap-1.5">
+                                                <div className="w-px h-4 bg-gradient-to-b from-transparent to-accent/40 animate-bounce" />
+                                                <span className="font-mono text-[8px] text-accent tracking-[0.2em] uppercase bg-[#0a0e14] px-2.5 py-0.5 rounded-full border border-white/5">
+                                                    Scroll to view more
+                                                </span>
+                                            </div>
                                         )}
                                     </div>
                                 </div>
