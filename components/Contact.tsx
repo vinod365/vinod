@@ -39,7 +39,7 @@ const Contact = () => {
 
     const [isEmailRevealed, setIsEmailRevealed] = useState(false);
     // Base64 encoded email to prevent simple bot scraping
-    const encodedEmail = "dGFud2Fydmlub2Q4OTRAZ21haWwuY29t";
+    const encodedEmail = "dmlub2R0YW53YXI0OTVAZ21haWwuY29t";
 
     const handleRevealEmail = (e: React.MouseEvent) => {
         if (!isEmailRevealed) {
@@ -48,7 +48,7 @@ const Contact = () => {
         }
     };
 
-    const getEmail = () => isEmailRevealed ? atob(encodedEmail) : "ta•••••••@gmail.com";
+    const getEmail = () => isEmailRevealed ? atob(encodedEmail) : "vi•••••••@gmail.com";
 
     return (
         <section id="contact" className="py-[88px] border-t border-border">
@@ -182,10 +182,10 @@ const Contact = () => {
                         </div>
                         <button
                             type="submit"
-                            disabled={isSubmitting}
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg text-[14px] font-semibold rounded-md hover:opacity-88 hover:-translate-y-px transition-all self-start disabled:opacity-50 disabled:translate-y-0"
+                            disabled={true}
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg text-[14px] font-semibold rounded-md hover:-translate-y-px transition-all self-start disabled:opacity-50 disabled:translate-y-0 disabled:cursor-not-allowed"
                         >
-                            {isSubmitting ? "Sending..." : "Send message →"}
+                            Work in progress
                         </button>
                     </form>
                 </motion.div>
